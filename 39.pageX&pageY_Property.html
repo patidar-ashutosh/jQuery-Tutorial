@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+	<title>Learn jquery</title>
+	<style>
+		body{ font-family: arial; }
+		h1{ font-size: 25px; }
+		#result{
+			border: 1px solid #6c5ce7;
+			background: #a29bfe;
+			width: 400px;
+			height: 400px;
+		}
+		#box{
+			border: 1px solid #e15f41;
+			background: #e77f67;
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery pageX & pageY Property</h1>
+	<div id="result"></div>
+	<div id="box"></div>
+
+	<script src="JS/jquery.js"></script>
+
+	<script>
+
+            // jQuery Event Properties & Methods - 1
+
+            // pageX hame mouse ka current X-Axis return karta hai 
+            // pageY hame mouse ka current Y-Axis return karta hai 
+
+                            // !! Important
+
+            // jQuery Event ki jitni bhi Properties & Methods hai uska use karne ke liye function ka parameter dena compulsory hai 
+            // function ke parameter me ham jo mouse&click ya or koi event call kiya hoga vo store ho jaye ga
+            // or jab hame koi event ki Properties & Methods ka use karna ho tab ham function ke parameter ke saath .(dot) laga ke use kar sakte hai
+        
+		$(document).ready(function(){
+
+			$(document).mousemove(function(p){
+				
+				$('#result').text("X: " + p.pageX + " Y: " + p.pageY);
+				
+				var x = p.pageX;
+				var y = p.pageY;
+
+				$('#box').offset({top:y,left:x});
+			});
+		});
+	</script>
+</body>
+</html>

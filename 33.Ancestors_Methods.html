@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Learn jquery</title>
+	<style>
+		body{ font-family: arial; }
+		h1{ font-size: 25px;}
+		#main-outer{
+			border: 1px solid #8e44ad;
+			background: #a29bfe;
+			padding: 10px 10px;
+			width: 600px;
+			height: 600px;
+			margin: 0 auto;
+		}
+		#outer{
+			border: 1px solid #ff9f43;
+			background: #fdcb6e;
+			padding: 10px 10px;
+			width: 550px;
+			height: 500px;
+			margin: 0 auto;
+		}
+		#inner{
+			border: 1px solid #f78fb3;
+			background: #f8a5c2;
+			padding: 10px 10px;
+			width: 500px;
+			height: 400px;
+			margin: 0 auto;
+		}
+		#inner div{
+			border: 1px solid #3dc1d3;
+			background: #63cdda;
+			padding: 10px 10px;
+			width: 70px;
+			height: 100px;
+			display: inline-block;
+			text-align: center;
+			margin: 0 15px 0 0;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>jQuery Ancestors Methods </h1>
+
+	<div id="main-outer" style="position: relative;">
+		<h2>Main Outer</h2>
+		<ul id="outer" style="position: relative;">
+			<h2>Outer</h2>
+            <h6></h6>
+			<div id="inner">
+				<h2 id="child-head">Inner</h2>
+				<div>A</div>
+				<div>B</div>
+				<div id="child-C">C</div>
+				<div>D</div>
+			</div>
+		</ul>
+	</div>
+	<br>
+
+	<script src="JS/jquery.js"></script>
+
+    <!--Ancestors Methods
+		parent()
+		parents()
+		parentsUntil()
+		offsetParent()
+		closest()
+
+		!! is method ka use kisi element ke parent ko targer karne ke liye kiya jaata hai
+		(jisme parent,grandparent,great-grandparent sabko target kar sakte hai))
+	-->
+
+	<script>
+		$(document).ready(function(){
+
+
+
+            //ye jo ham hai uska use karke ham parent element pe css , html SET ya GET kar sakte hai animation kar sakte hai (sab task kar sakte hai)
+
+            //$("#child-C").parent().css("background","red");
+            //parent() method target element ke parent element ko target karne ke liye use hota hai
+
+            //$("#child-C").parents().css("background","red");
+            //parents() method target element ke sabhi parent element ko target karne ke liye use hota hai (jisme parent,grandparent,great-grandparent sabko target karta hai)
+            // $("#child-C").parents("#main-outer").css("background","red");
+            //ham is tarike se kisi ek parent ko bhi target kar sakte hai
+
+            // $("#child-C").parentsUntil("#main-outer").css("background","red");
+            //parentsUntil() method ka use target Element ke sabhi parents mese kisi ek parents se lekar kisi dusre parents tak target karne ke liye hota hai
+            //to ye jo hamara parentsUntil() hai wo child-C se lekar #main-outer tak jitne parents hai sabhi ko target kare ga 
+            //short me bole to parentsUntil() ka use ek parent se lekar dusre parent tak limit laga ne ke liye hota hai
+ 
+            // $("#child-C").offsetParent("#main-outer").css("background","red");
+            // offsetParent() method ka use tab hota hai jab hame ese parent ko target karna ho jispe css ki position property use ho rahi ho 
+            // yani ki offsetParent() use first parent ko target karta hai jis pe position ki property lagi hogi
+            // !! ye sirft us ke first parent ko he target karga jispe position property lagi ho 
+
+            $("#child-C").closest("ul").css("background","red");
+            // closest() method us parent ko he target karta hai jo uske closest ho 
+            // jese ki hamne child-C ko target kiya hai or closest method ke parameter me ul diya hai to vo child-C ke jobhi closest parent ul hoga use target kare ga
+
+
+		});
+	</script>
+</body>
+</html>

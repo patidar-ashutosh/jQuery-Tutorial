@@ -1,0 +1,84 @@
+<!--Filtering Methods
+        first()
+        last()
+        eq()
+        filter()
+        not()
+        slice()
+-->
+
+<html lang="en">
+<head>
+	<title>Learn jquery</title>
+	<style>
+		body{ font-family: arial; }
+		h1{ font-size: 25px; }
+		#first{
+			background: #ffeaa7;
+			padding: 10px;
+			border: 1px solid #000;
+		}
+		#second{
+			background: #a29bfe;
+			padding: 10px;
+			border: 1px solid #6c5ce7;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery Filtering Methods</h1>
+	<div id="first">
+		<p>Lorem ipsum <span>dolor sit amet</span> consectetur adipisicing elit. Laborum nostrum voluptate delectus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur mollitia nostrum modi earum qui, maxime.</p>
+	</div>
+	<br>
+	<ul>
+		<li>Orange</li>
+		<li>Apple</li>
+		<li>Banana</li>
+		<li>Grapes</li>
+	</ul>
+	<div id="second">
+		<p class="test">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, eaque eius! Exercitationem dolorum commodi ea! Debitis, quo illum eos ratione aliquam eveniet, praesentium architecto excepturi, molestias, est optio. Vitae, similique.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Repellendus earum reprehenderit obcaecati ea, sapiente, cupiditate quod magnam porro officiis magni.</p>
+	</div>
+
+	<script src="JS/jquery.js"></script>
+
+	<script>
+		$(document).ready(function(){
+
+            // $('p').first().css("background","gold");
+            // first() method target Element ki first property ko target karta hai
+            // $('#second p').first().css("background","gold");
+            // jese hamne diya hai ki id second ka p yani ki vo second id me jo first p tag hoga usse target kare ga 
+
+            // $('p').last().css("background","gold");
+            // last() method target Element ki last property ko target karta hai
+            // $('ul li').last().css("background","gold");
+            // jese hamne diya hai ki ul tag ka li yani ki vo ul tag me jo last li tag hoga usse target kare ga 
+
+            // $('p').eq(2).css("background","gold");
+            // eq() method ka use target Element ke kisi bhai Element ko target karne ke liye hota sirf ham parameter me uska index dena hota hai 
+            // jese ki hamne 2 diya hai to vo pure page me jo 2 index pe paragraph hoga usse target kare ga
+
+            // $('p').filter(".test").css("background","gold");
+            // filter() ke parameter me hame dena padta hai ki ham kise target kar rahe hai 
+            // filter() method parameter me diye gye Element ko target karta hai
+            // jese ki hamne test id diya hai to wo jis paragraph pe test id hoga usse target kare ga
+
+            // $('p').not(".test").css("background","gold");
+            // not() ke parameter me hame dena padta hai ki ham kise target kar rahe hai 
+            // not() method ka kare ga ki parameter me diye gye Element ke sivay sabko target kare ga
+            //jese ki hamne test id diya hai to vo jis paragraph me test id hogi uske sivay sabhi paragraph ko target kare ga
+
+            // $('ul li').slice(1,3).css("background","gold");
+            // slice() method me ham ek parameter dete joki index hota hai 
+            // slice() method target kiye gay Element ka slice() me diye gaye index number se lekar next sabhi Element ko target karta hai 
+            // slice() method me ham second parameter bhi de sakte hai   // yani ki kahase lekar kaha tak wo target kare ga
+            // jese ki hamne diya hai ki 1 se lekar 3 tak to jo 1 se start karke 3 index tak sabhi Element ko target kare ga 
+            // !! ye 3 ko target nahi kare ga 3 tak ko target kare ga
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        clone() method ka use kisi ek element ki value ko copy karke kisi or element me clone(paste) karne ke liye hota hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+        #box2{
+            background-color: orange;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br>
+    <div id="box2">
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <br>
+    <button id="cloneBtn">Clone</button>
+  
+    <script>
+        $(document).ready(function(){
+
+            $("#cloneBtn").click(function(){
+                $("#box h2").clone().prependTo("#box2");
+                $("#box p").clone().appendTo("#box2");
+            });
+         
+        })
+    </script>
+    
+</body>
+</html>

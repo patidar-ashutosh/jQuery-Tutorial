@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+	<title>Learn jquery</title>
+	<style>
+		body{ font-family: arial; }
+		h1{ font-size: 25px; }
+		#first{
+			background: #ffeaa7;
+			padding: 10px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery has() & is() Method</h1>
+	<div id="first">
+		<p>Lorem ipsum dolor sit amet <b>consectetur adipisicing elit</b>. Laborum nostrum voluptate delectus.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur mollitia nostrum modi earum qui, maxime.</p>
+	</div>
+	<br>
+	<ul>
+		<li>Orange</li>
+		<li><span>Apple</span></li>
+		<li>Banana</li>
+		<li>Grapes</li>
+	</ul>
+	<p class="test">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, eaque eius! Exercitationem dolorum commodi ea! Debitis, quo illum eos ratione aliquam eveniet, praesentium architecto excepturi, molestias, est optio. Vitae, similique.</p>
+	<p>Lorem ipsum dolor sit amet, <span class="test">consectetur, adipisicing</span> elit. Repellendus earum reprehenderit obcaecati ea, sapiente, cupiditate quod magnam porro officiis magni.</p>
+
+	<script src="JS/jquery.js"></script>
+
+	<script>
+
+		$(document).ready(function(){
+
+            // has() method ka use kisi element ke child element ko target karne ke liye kiya jaata hai 
+			$('p').has('b').css('background','gold');
+            //jese ki hamne yaha pe p element ko target karke jis p tag ke child me b tag aa raha ho use target kiya hai
+
+			$('p').has('b,span').css('background','gold');
+            //has() method ke parameter me ham multiple element bhi pass kar sakte hai
+            // ye kya kare ga ki jis p tag ke child me b or span tag hoge un sabko target kare ga 
+
+
+
+            /*  is() method check karne ke liye kiya jaata hai ki Element me target kiya gya id,tag,class hai ya nahi
+                is() method return me hame true ya false hee return karta hai
+                yadi class hoga to true return kare ga nahi hoga to false 
+            */
+
+            // @!! is() method ka use ham sirf if condition me he kar sakte hai 
+
+			/*$('p').click(function(){
+				if($(this).parent().is('div')){
+				$(this).css('background','gold');	
+				}
+
+                // jese ki hamne yaha pe yadi paragraph pe click ho
+                // fir hamne condition check kiya hai ki p tag ka koi div parent hai ya nahi
+                // yadi hoga to p tag ka background glod ho jaye
+			});*/
+		});
+	</script>
+</body>
+</html>

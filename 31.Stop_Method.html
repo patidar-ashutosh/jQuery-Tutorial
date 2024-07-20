@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        stop() method ka use animation ko start se lekar endinh point ke bich me stop karne ke liye hota hai
+
+        ! is stop method ko ham Hide , Show , Toggle , Fade , Slide Methods ke saath bhi use kar sakte hai
+    --> 
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid black;
+            position: relative;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">Animate</div>
+    <br><br>
+    
+    <button id="animateBtn">Animate</button>
+    <button id="stopBtn">Stop</button>
+ 
+    <script> 
+        $(document).ready(function(){
+             
+            $("#animateBtn").click(function(){
+                $("#box").animate({left : '200px'},3000);
+                $("#box").animate({fontSize : '25px'},2000);
+            });
+
+            $("#stopBtn").click(function(){
+                //$("#box").stop(); //ye sirf pehle animation ko he stop kare ga (default value false hota hai)
+                //$("#box").stop(true); //true yani ki ye sabhi animation ko stop karde ga
+                $("#box").stop(true,true);
+                //is me jo first true hai yaniki sabhi animation stop ho jaye
+                //2nd jo true hai yani ki jo animation hai wo us ke finish point pe chala jaye
+            });
+
+        });
+    </script>
+    
+</body>
+</html>

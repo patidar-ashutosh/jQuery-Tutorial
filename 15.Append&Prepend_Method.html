@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        append() => append() Method ka use jab ham jQuery ki help se target element(tag) me last me koi new content add karna chahte hai tab hota hai
+        $("#box").append("<tag>content</tag>");
+        prepend() => prepend() Method ka use jab ham jQuery ki help se target element(tag) me first me koi new content add karna chahte hai tab hota hai
+        $("#box").prepend("<tag>content</tag>");
+
+        difference between append() &  prepend()
+        append() method target element(tag) me last me content add karta hai && prepend() method target element(tag) me first me content add karta hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+    <button id="appendBtn">Append</button>
+    <button id="prependBtn">Prepend</button>
+  
+    <script> 
+
+        $(document).ready(function(){
+
+            $("#appendBtn").click(function(){
+                $("#box").append("<h2>this is append</h2>");
+            });
+
+            $("#prependBtn").click(function(){
+                $("#box").prepend("<h2>this is prepend</h2>");
+            });
+        });
+
+    </script>
+    
+</body>
+</html>

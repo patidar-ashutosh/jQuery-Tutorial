@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        jQuery SET Methods => SET Methods ka use HTML Element(tag) ki Value ko SET karne ke liye hota hai
+
+        text() => HTML ke kisi bhi Element me text SET karne ke liye text() method ka use hota hai
+        text("write text");
+
+        html() => HTML ke kisi bhi Element ka html SET karne ke liye html() method ka use hota hai
+        html("<h1>enter text </h1>");
+
+        ! text or html me ye different hai ki
+        text() method ka use karne ham only text SET kar sakte hai
+        jabki html() method ka use karke ham koi bhi html tag or text dono saath me SET kar sakte hai
+
+        attr() => HTML ke kisi bhi Element me attribute SET karne ke liye attr() method ka use hota hai
+        attr("class_name", "value");
+
+        val() => Form ke kisi bhi filed ki value ko SET karne ke liye val() Method ka use hota hai
+        val("enter value");
+
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color:pink ;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .red{
+            color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="box" class="abc xyz">
+        <h2>SET Method</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+    
+    <button id="clickbutton">SET New Value</button>
+    <br><br><br><br><br><br><br><br>
+
+   <form action="" id="sform">
+        <label>Name</label> <input type="text" id="sname"> <br><br>
+        <label>Country</label>
+        <select id="scountry">
+            <option value="india">india</option>
+            <option value="pakistan">pakistan</option>
+            <option value="us">us</option>
+            <option value="nepal">nepal</option>
+        </select> <br><br>
+        <input type="submit">
+   </form>
+   
+    <script>
+
+        $(document).ready(function(){
+            $("#clickbutton").click(function(){
+                $("#box h2").text("this is new heading");
+
+                $("#box p").html("this is <b>new text </b>");
+
+                // var att =  $("#box").attr("class_name", "value");
+                $("#box h2").attr("class" , "red");
+            });
+
+            $("#sname").val("demo");
+            $("#scountry").val("india");
+
+        });
+         
+
+         
+    </script>
+    
+</body>
+</html>

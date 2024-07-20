@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        wrap() ka use kisi element ka parent tag create karne ke liye hota hota hai
+        $("#box p").wrap('<tagName></tagName>'); tag name me hame jo parent tag create karna hai wo tag dege ex:- div
+
+        unwrap() ka use kisi element ka parent tag remove karne ke liye hota hota hai
+        $("#box p").unwrap();
+
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        #test{
+            background-color: pink;
+            padding: 5px;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+
+    <button id="WrapBtn">Wrap</button>
+    <button id="UnWrapBtn">UnWrap</button>
+  
+    <script>
+        $(document).ready(function(){
+
+            $("#WrapBtn").click(function(){
+                // $("#box p").wrap('<div id="test"></div>');
+                $("#box p").wrap('<h2></h2>');
+            });
+
+            $("#UnWrapBtn").click(function(){
+                $("#box p").unwrap();
+            });
+            
+        })
+    </script>
+    
+</body>
+</html>

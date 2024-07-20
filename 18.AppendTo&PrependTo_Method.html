@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        appendTo() => appendTo() Method ka use jab ham jQuery ki help se target element(tag) me last me koi new content add karna chahte hai tab hota hai
+        append method OR appendTo method me sirf syntax ka difference hai
+        append method syntax :-  $(selector).append(content)
+        appendTo method syntax :-  $(content).appendTo(selector)
+
+        prependTo() => prependTo() Method ka use jab ham jQuery ki help se target element(tag) me first me koi new content add karna chahte hai tab hota hai
+        prepend method syntax :-  $(selector).prepend(content)
+        prependTo method syntax :-  $(content).prependTo(selector)
+        
+        difference between appendTo() &  prependTo()
+        appendTo() method target element(tag) me last me content add karta hai && prependTo() method target element(tag) me first me content add karta hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+    <button id="appendToBtn">Append To</button>
+    <button id="prependToBtn">Prepend To</button>
+  
+    <script>
+        $(document).ready(function(){
+
+            $("#appendToBtn").click(function(){
+                $("<h2>this is appendTo</h2>").appendTo("#box");
+            });
+            $("#prependToBtn").click(function(){
+                $("<h2>this is prependTo</h2>").prependTo("#box");
+            });
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        animate() method ka use jQuery ki help se animation create karne kke liye hota hai
+
+        syntax :- $(selector).animate({parameters} , speed , callback_function);
+        parameters me ham css ki property denge jo css hame karni hai || css ham {} me karte hai
+        ! css ki jo property hoti hai us se hame camel case me likh na padta hai
+        ex:- padding-left(wrong) ||  paddingLeft(right)
+
+        speed me ham slow ,fast ya millisecond de sakte hai
+        or jab animate ho jaye to kuch or task karna ho to ham callback function bhi create kar sakte hai
+    --> 
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid black;
+            position: relative;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">Animate</div>
+    <br><br>
+    
+    <button id="animateBtn">Animate</button>
+ 
+    <script> 
+        $(document).ready(function(){
+             
+            $("#animateBtn").click(function(){
+                // $("#box").animate({
+                //     left : '150px',width : '200px',
+                //     fontSize : '25px',borderWidth : '5px'
+                // })
+
+                // ham esa chahte hai ki ye jo animation ek saath ho raha hai to ONE by ONE ho to uske liye ham queue ka use kar sakte hai
+                // queue yani ki ham jese code me animation likhe ge wo wese animate hoga
+                // jese ki hamne pehle left or fonsize diya hai to pehle vo animation complete hoga
+                // uske baad top ka Animation complete  hoga
+                // or last me width ka Animation complete  hoga
+                $("#box").animate({left : '150px',fontSize : '25px'});
+                $("#box").animate({top : '150px'});
+                $("#box").animate({width : '250px'});
+
+
+                //speed
+                // $("#box").animate({top : '150px'},"slow");
+                // $("#box").animate({top : '150px'},"fast");
+                // $("#box").animate({top : '150px'},3000); //ye millisecond me work karta hai
+
+
+                //callback function
+                // $("#box").animate({top : '150px'},3000,function(){
+                //     console.log("animation done");
+                //     //callback function yani ki jab ye hide ho jaye to uske baad ek function apne aape call ho jaye
+                // });
+
+
+            });
+
+        });
+    </script>
+    
+</body>
+</html>

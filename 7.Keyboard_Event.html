@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <script src="JS/jquery.js"></script>
+    <style>
+        .test{
+            background-color:aqua ;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="test">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quo deleniti nesciunt aperiam totam vitae tempora nam incidunt. Dolore, quasi?</p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("body").keypress(function()
+            {
+                $(this).css("background-color","orange");
+                //ham jis pe event laga te hai or us Element pe ek ham koi task karna chahte hai to ham this ka use kar sakte hai  
+            });
+
+            $("body").keydown(function()
+            {
+                $("body").css("background-color","black");
+            });
+
+            $("body").keyup(function()
+            {
+                $(this).css("background-color","green");
+            });
+        });
+    </script>
+    
+</body>
+</html>

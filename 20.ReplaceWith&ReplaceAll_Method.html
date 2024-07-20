@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        replaceWith method ka use target element ke kisi ek element ko kisi or text ya tag se replace karne ke liye hota hai
+        $("#box p:first").replaceWith("<tag>contenr</tag>");
+
+        replaceAll method ka use kisi target element ke all element ko kisi or tag se replace karne ke liye hota hai
+        $("<tag>contenr</tag>").replaceAll("#box p:first");
+
+        difference between replaceWith & replaceAll
+        replaceWith tag, text dono ko replace karta hai
+        replaceAll sirf tag ko he replace karta hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae voluptates ducimus debitis velit, corporis eos.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, odit!</p>
+    </div><br>
+   
+    <button id="replaceBtn">Replace</button>
+  
+    <script>
+        $(document).ready(function(){
+
+            $("#replaceBtn").click(function(){
+                // $("#box p:first").replaceWith("<h3>this is replace </h3>");
+                // $("#box p:nth-child(3)").replaceWith("<h3>this is replace </h3>");
+
+                $("<h3>this is replaceall</h3>").replaceAll("#box p");
+                // $("<h3>this is replaceall</h3>").replaceAll("#box p:first");
+            })
+         
+        })
+    </script>
+    
+</body>
+</html>

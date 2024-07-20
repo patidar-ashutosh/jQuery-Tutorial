@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        CSS() Method => CSS() Method ka use jQuery ki help se HTML ke Element pe In-Line CSS apply karne ke liye hota hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+
+    <button id="addbutton">Add CSS</button>
+  
+    <script>
+        $(document).ready(function(){
+
+            $("#addbutton").click(function(){
+                // $("#box").css("background" ,"red");
+                // add multiple property 
+                // multiple css property add karne ke liye ham {} ka use karna padta hai 
+                $("#box").css({"background":"black", "color":"red"});
+            });
+            
+        });
+    </script>
+    
+</body>
+</html>

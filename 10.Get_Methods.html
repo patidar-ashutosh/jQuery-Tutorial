@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        jQuery Get Methods => GET Methods ka use HTML  Element(tag) ki Value ko GET karne ke liye hota hai
+        text() => HTML ke kisi bhi Element ka text GET karne ke liye text() method ka use hota hai
+        html() => HTML ke kisi bhi Element ka html GET karne ke liye html() method ka use hota hai
+        ! text or html me ye different hai ki
+        text ham only text deta hai && html ham html or text dono deta hai
+        attr() => HTML ke kisi bhi Element ke attribute ki value ko GET karne ke liye attr() method ka use hota hai
+        val() => Form ki value ko GET karne ke liye val() Method ka use hota hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color:pink ;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box" class="abc xyz">
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br><br><br><br><br><br><br><br><br>
+
+   <form action="" id="sform">
+        <label>Name</label> <input type="text" id="sname"> <br><br>
+        <label>Country</label>
+        <select id="scountry">
+            <option value="india">india</option>
+            <option value="pakistan">pakistan</option>
+            <option value="us">us</option>
+            <option value="nepal">nepal</option>
+        </select> <br><br>
+        <input type="submit">
+   </form>
+   
+    <script>
+        $(document).ready(function(){
+           
+            var a =  $("#box").html();
+            console.log(a);
+            var aa =  $("#box p").html();
+            console.log(aa);
+
+            var t =  $("#box").text();
+            console.log(t);
+
+            var att =  $("#box").attr("class");
+            //attr() method ke parameter me ham dete ai ki ham kis attribute ki value dekh ni hai
+            console.log(att);
+
+            $("#sform").submit(function(){
+                var sname =  $("#sname").val();
+                var scountry =  $("#scountry").val();
+                alert("name : "+sname+" country : "+scountry);
+            });
+         
+         });
+    </script>
+    
+</body>
+</html>

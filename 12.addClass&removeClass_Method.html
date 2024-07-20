@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        jQuery SET Methods => SET Methods ka use HTML Element(tag) ki Value ko SET karne ke liye hota hai
+
+        addClass() => addClass Method ka use ki HTML element me class ko add karne ke liye hota hai
+        removeClass() => removeClass Method ka use ki HTML element mese ki existing class ko remove karne ke liye hota hai
+        toggleClass() => toggleClass Method ka use ki HTML element me class ko add OR class ko remove karne ke liye hota hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .first{background-color: tan;}
+        .second{background-color: pink;}
+
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+
+    <button id="addbutton">Add Class</button>
+    <button id="removebutton">Remove Class</button>
+    <button id="togglebutton">Toggle Class</button>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#addbutton").click(function(){
+                // $("#box").addClass("first");
+                //add multiple class
+                $("#box").addClass("first second");
+            });
+
+            $("#removebutton").click(function(){
+                $("#box").removeClass("second");
+                // remove multiple class 
+                // $("#box").removeClass("first second");
+            });
+            
+            $("#togglebutton").click(function(){
+                // $("#box").toggleClass("first");
+                // toggle multiple class 
+                $("#box").toggleClass("first second");
+            });
+        });
+    </script>
+    
+</body>
+</html>

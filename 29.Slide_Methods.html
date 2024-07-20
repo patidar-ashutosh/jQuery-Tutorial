@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        slideUp() ka use kisi bhi element ko hide karne ke liye hota hai
+        slideDown() ka use kisi bhi element ko show karne ke liye hota hai
+        slideToggle() ka use kisi bhi element ko hide & show dono ek saath karne ke liye hota hai
+
+        //in function me sirf slide up & down ka animation dikhta hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 30px;
+            margin: 20px;
+            border: 10px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+    
+    <button id="slideUpBtn">slideUp</button>
+    <button id="slideDownBtn">slideDown</button>
+    <button id="slideToggleBtn">slideToggle</button>
+  
+    <script> 
+        $(document).ready(function(){
+
+             $("#slideUpBtn").click(function(){
+                // $("#box").slideUp();
+                // $("#box").slideUp("slow");
+                $("#box").slideUp("fast");
+                // $("#box").slideUp(3000); //ye millisecond me work karta hai
+                // $("#box").slideUp(3000,function(){
+                //     console.log("now it is slideUp");
+                //     //callback function yani ki jab ye hide ho jaye to uske baad ek function apne aape call ho jaye
+                // });
+             });
+
+             $("#slideDownBtn").click(function(){
+                // $("#box").slideDown();
+                // $("#box").slideDown("slow");
+                // $("#box").slideDown("fast");
+                // $("#box").slideDown(3000); //ye millisecond me work karta hai
+                $("#box").slideDown(3000,function(){
+                    console.log("now it is slideDown");
+                });
+             });
+
+             $("#slideToggleBtn").click(function(){
+                // $("#box").slideToggle();
+                $("#box").slideToggle("slow");
+                // $("#box").slideToggle("fast");
+                // $("#box").slideToggle(3000); //ye millisecond me work karta hai
+                // $("#box").slideToggle(3000,function(){
+                //     console.log("now it is slideToggle");
+                // });
+             });
+        });
+    </script>
+    
+</body>
+</html>

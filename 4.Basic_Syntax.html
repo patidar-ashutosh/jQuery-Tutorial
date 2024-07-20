@@ -1,0 +1,85 @@
+<!--
+<script>
+
+    //basic syntax :- 
+    $(document).ready(function(){
+        //iska matlab hai ki jese he document ready ho jaye to hamara jo functiona hai wo run kare ha
+    });
+
+    $(document).ready(function(){
+        
+        hamara jo .(dot) ke left wala part hai us se ham kehte hhai selector
+        or jo right wala part hai us se kehte hai methods
+
+        Selector ka use ham dom ke element ko target karne ke liye karte hai
+        method ka use ham is liye karte hai ki jo hamare selector hai wo select ho jaye uske baad kya ho
+        
+    });
+
+    basic syntax ham 2 type se likh  sakte hai
+    1st
+    $(document).ready(function(){
+        jab hamra document hai wo ready ho jaye tab function work karna start kare ga
+    });
+
+     
+    2nd
+    $(function()
+    {
+        ise ham head part me likhte hai  or tab tak hamara body load nahi huva hota hai to ye jquery work nahi kare ga
+        ise ham body ke last me script tag me likhe te hai kyo ki pehle hamari body hai wo load ho jaye fir ye function hai wo run hai
+    });
+
+</script>
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <script src="JS/jquery.js"></script>
+
+    <style>
+        #byid{
+            background-color: aquamarine;
+            width: 300px;
+            height: 100px;
+        }
+
+        .byclass{
+            background-color: blueviolet;
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="byid">
+        <h1>this is by id</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, sequi!</p>
+    </div>
+
+    <div class="byclass">
+        <h1>this is by class</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, sequi!</p>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            
+            var a = $("#byid").html();
+            //$ ka use ham is liye karte hai kyo ki ham selecto ko select kar rahe hai
+            console.log(a);
+
+            var b = $(".byclass").html();
+            console.log(b);
+        });
+    </script>
+    
+</body>
+</html>

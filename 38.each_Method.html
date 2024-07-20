@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+	<title>Learn jquery</title>
+	<style>
+		body{ font-family: arial; }
+		h1{ font-size: 25px; }
+	</style>
+</head>
+<body>
+	<h1>jQuery each() Method</h1>
+	<ul>
+		<li>Orange</li>
+		<li>Apple</li>
+		<li>Banana</li>
+		<li>Grapes</li>
+	</ul>
+
+	<script src="JS/jquery.js"></script>
+
+	<script>
+
+        // each() method loop jesa work karta hai 
+        // examle le liye jese hi hamare page me 10 paragraph hai to wo ONE by ONE sabhi paragraph ke liyerun hoga 
+        // or us paragraph me ham SET ya GET kuch bhi task kar sakte hai
+
+		$(document).ready(function(){
+			 $('li').each(function(){
+                $('li').css("background","pink");
+             });
+
+             // ye kya kare ga kisi ONE By ONE page me jitne bhi li hoge sabke liye loop run hoga
+             // or hamne function me jo bhi code diya hoga vo sabke liye ONE By ONE run hoga
+             // or sabka background pink ho jaye ga 
+		});
+	</script>
+</body>
+</html>

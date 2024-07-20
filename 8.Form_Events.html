@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!-- focus , blur , change , select ,submit  -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        .test{
+            background-color:aqua ;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+   <form action="" id="sform">
+
+        <label>Name</label>
+        <input type="email" id="sname"> <br><br>
+
+        <label>Class</label>
+        <input type="text" id="sclass"> <br><br>
+
+        <label>Country</label>
+        <select id="scountry">
+            <option value="india">india</option>
+            <option value="pakistan">pakistan</option>
+            <option value="us">us</option>
+            <option value="nepal">nepal</option>
+        </select> <br><br>
+
+        <input type="submit">
+
+   </form>
+   
+   <div id="test" style="border: 1px solid red; margin-top:20px;"></div>
+
+    <script>
+       $(document).ready(function(){
+
+        $("#sname, #sclass , #scountry").focus(function(){
+            $(this).css("background","lime");
+        });
+        $("#sname, #sclass , #scountry").blur(function(){
+            $(this).css("background","");
+        });
+        $("#scountry").change(function(){
+            // $(this).css("background","pink");
+            //change select ke saath he work karta hai
+            var a = $(this).val();
+            $("#test").html(a);
+        });
+        $("#sname, #sclass").select(function(){
+            $(this).css("background","yellow");
+        });
+        $("#sform").submit(function(){
+            alert("Form Submitted");
+        });
+
+
+       });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+	<title>Learn jquery</title>
+	<style>
+		body{ font-family: arial; }
+		h1{ font-size: 25px; }
+		#box{
+			border: 1px solid #6c5ce7;
+			background: #a29bfe;
+			width: 400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery Event.type Property</h1>
+	<div id="box"></div>
+	<h2></h2>
+
+	<script src="JS/jquery.js"></script>
+
+	<script>
+
+        // jQuery Event Properties & Methods - 2
+
+        // type Property hame event ka type return karta hai ki konsa event call huva hai
+        // jese ki ham click kare ge to wo hame return kare ga ki click event call huva hai
+
+                        // !! Important
+
+        // jQuery Event ki jitni bhi Properties & Methods hai uska use karne ke liye function ka parameter dena compulsory hai 
+        // function ke parameter me ham jo mouse&click ya or koi event call kiya hoga vo store ho jaye ga
+        // or jab hame koi event ki Properties & Methods ka use karna ho tab ham function ke parameter ke saath .(dot) laga ke use kar sakte hai
+    
+
+		$(document).ready(function(){
+
+			$('#box').on("click dblclick mouseover mouseout",function(event){
+				$('h2').html("Event: "+ event.type)
+			});
+
+		});
+	</script>
+</body>
+</html>

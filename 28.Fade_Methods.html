@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        fadeOut() ka use kisi bhi element ko hide karne ke liye hota hai
+        fadeIn() ka use kisi bhi element ko show karne ke liye hota hai
+        fadeToggle() ka use kisi bhi element ko hide & show dono ek saath karne ke liye hota hai
+        fadeTo() ka use kisi element ki opacity ko down karne ke liye hota hai 
+        $(selector).fadeTo(speed,opacity,callback function)
+
+        //in function me sirf fade ka animation dikhta hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+
+    <button id="fadeOutBtn">fadeOut</button>
+    <button id="fadeInBtn">fadeIn</button>
+    <button id="fadeToggleBtn">fadeToggle</button>
+    <button id="fadeToBtn">fadeTo</button>
+  
+    <script> 
+        $(document).ready(function(){
+
+            $("#fadeOutBtn").click(function(){
+                // $("#box").fadeOut();
+                // $("#box").fadeOut("slow");
+                // $("#box").fadeOut("fast");
+                // $("#box").fadeOut(3000); //ye millisecond me work karta hai
+                $("#box").fadeOut(3000,function(){
+                    console.log("now it is fadeOut");
+                    //callback function yani ki jab ye hide ho jaye to uske baad ek function apne aape call ho jaye
+                });
+            });
+
+            $("#fadeInBtn").click(function(){
+                // $("#box").fadeIn();
+                // $("#box").fadeIn("slow");
+                // $("#box").fadeIn("fast");
+                // $("#box").fadeIn(3000);
+                $("#box").fadeIn(3000,function(){
+                    console.log("now it is fadeIn");
+                });
+            });
+
+            $("#fadeToggleBtn").click(function(){
+                // $("#box").fadeToggle();
+                // $("#box").fadeToggle("slow");
+                // $("#box").fadeToggle("fast");
+                // $("#box").fadeToggle(3000);
+                $("#box").fadeToggle(3000,function(){
+                    console.log("now it is fadeToggle");
+                });
+            });
+
+            $("#fadeToBtn").click(function(){
+
+                //$(selector).fadeTo(speed,opacity,callback function)
+                // $("#box").fadeTo(2000 , 0.5);
+                $("#box").fadeTo(2000 , 0.5,function(){
+                    console.log("now it is fadeTo");
+                });
+            });
+           
+        });
+    </script>
+    
+</body>
+</html>

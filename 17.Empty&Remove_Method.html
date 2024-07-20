@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        empty() => empty() Method ka use jQuery ki help se target element(tag) mese content ko empty karne ke liye hota hai
+        $("#box").empty();
+
+        remove() => remove() Method ka use jQuery ki help se target element(tag) ko remove(delete) karne ke liye hota hai
+        $("#box").remove();
+
+
+        difference between empty() &  remove()
+        empty() method target element(tag) mese content delete karta hai && remove() method target element(tag) ko remove(delete) karta hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <h1>Empty & Remove</h1>
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+    <button id="EmptyBtn">Empty</button>
+    <button id="RemoveBtn">Remove</button>
+  
+    <script> 
+        $(document).ready(function(){
+            
+            $("#EmptyBtn").click(function(){
+                $("#box").empty();
+                // $("#box h2").empty();
+            });
+            $("#RemoveBtn").click(function(){
+                $("#box").remove();
+                // $("h1").remove();
+            });
+
+        });
+    </script>
+    
+</body>
+</html>

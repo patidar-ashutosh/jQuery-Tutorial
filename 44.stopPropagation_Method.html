@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Learn jquery</title>
+	<style>
+		body{ font-family: arial; }
+		h1{ font-size: 25px; }
+		#box{
+			border: 1px solid #6c5ce7;
+			background: #a29bfe;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>jQuery Event.stopPropagation()</h1>
+	<div id="box">
+		<h2>Test Box</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nostrum voluptate delectus.</p>
+		<button>Test Button</button>
+	</div>
+	<script src="JS/jquery.js"></script>
+
+	<script>
+
+        // jQuery Event Properties & Methods - 6
+
+        /*
+        event bubbling yani ki jese ham ek div lete hai or us div me ham ek button lete hai 
+        ham us div or button pe click kare to koi message show karta te hai 
+        ab jab user div pe click kare ga to div ka message show hoga
+        but jab user button pe click kare ga to button ka to message show hoga he or saath me div ka bhi message show hoga
+        usi ko hee event bubbling bola jaata hai
+        esa is liye hota hai kyo ki jo button hai wo div me hai or jab button pe click hota hai to wo div pe bhi click hoga he 
+        */
+
+        /* stopPropagation() Method ka use event bubbling ko stop karne ke liye kiya jaata hai  
+        stopPropagation() Method se jis pe click huva hoga uska he event call hoga naki uske parent ka bhi */
+
+        /* isPropagationStopped() Method ka use check karne ke liye hota hai ki hamne target Element pe stopPropagation() method use kiya hai ya nahi 
+        yadi use kiya hoga to vo hame true return kare ga nahi to false return kare ga  */
+ 
+                        // !! Important
+
+        // jQuery Event ki jitni bhi Properties & Methods hai uska use karne ke liye function ka parameter dena compulsory hai 
+        // function ke parameter me ham jo mouse&click ya or koi event call kiya hoga vo store ho jaye ga
+        // or jab hame koi event ki Properties & Methods ka use karna ho tab ham function ke parameter ke saath .(dot) laga ke use kar sakte hai
+
+		$(document).ready(function(){
+
+			$('#box').click (function(){
+				alert("The div element was Clicked");
+			});
+
+			$('h2').click (function(){
+				alert("The h2 element was Clicked");
+			});
+
+			$('p').click (function(event){
+				event.stopPropagation();
+				alert("The p element was Clicked" + event.isPropagationStopped());
+			});
+
+			$('button').click (function(){
+				alert("The button element was Clicked");
+			});
+		
+		});
+	</script>
+</body>
+</html>    

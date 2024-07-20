@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        after() => after() Method ka use jab ham jQuery ki help se target element(tag) ke outside last me koi new content add karna chahte hai tab hota hai
+        $("#box").after("<tag>content</tag>");
+
+        before() => before() Method ka use jab ham jQuery ki help se target element(tag) ke outside first me koi new content add karna chahte hai tab hota hai
+        $("#box").before("<tag>content</tag>");
+
+        difference between after() &  before()
+        after() method target element(tag)ke outside last me content add karta hai && before() method target element(tag)ke outside first me content add karta hai
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+    <button id="AfterBtn">After</button>
+    <button id="BeforeBtn">Before</button>
+  
+    <script> 
+        $(document).ready(function(){
+            
+            $("#AfterBtn").click(function(){
+                $("#box").after("<h3>this is after</h3><p>this is text</p>");
+                //ham isme mutiple tag leke bhi value add kar sakte hai like:
+            });
+            $("#BeforeBtn").click(function(){
+                $("#box").before("<h3>this is before</h3>");
+            });
+
+        });
+    </script>
+    
+</body>
+</html>

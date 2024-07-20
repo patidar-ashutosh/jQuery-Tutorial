@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        Method Chaining se hamara code hai wo short hota hai
+        Method Chaining me ham jo method ka use karte hai wo ONE by ONE call hota hai
+    --> 
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            background-color: lightgreen;
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>heading</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolor esse odio dolorum, similique aspernatur. Dignissimos illum eveniet consequuntur? Architecto.</p>
+    </div>
+    <br><br>
+    
+    <button id="animateBtn">Animate</button>
+ 
+    <script> 
+        $(document).ready(function(){
+             
+            $("#animateBtn").click(function(){
+                // Without Method Chaining
+                /*
+                $("#box").css("background", "pink");
+                $("#box").slideUp(3000);
+                $("#box").slideDown(2000); */
+                
+                // With Method Chaining
+                $("#box").css("background", "pink").slideUp(3000).slideDown(2000);
+            });
+
+        });
+    </script>
+    
+</body>
+</html>

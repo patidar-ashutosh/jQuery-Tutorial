@@ -1,0 +1,63 @@
+<!--
+    basic selector
+    select by id : $(#idname)
+    select by class : $(.classname)
+    select by tag : $(tagname)
+
+    advance selector
+    $("*") => html me jitne bhi tag hoge ye dab ko target kare ga
+    $("parent child") ex:- $("ul li") => target parent and child
+    $(".abc , .xyz") => target multiple class
+    $("h1,p,div") => target multiple tag
+    $(tag:first)=> tag ki first value ko target kare ga
+    $(tag:last)=> tag ki last value ko target kare ga
+    $(tag:even)=> tag ki even value ko target kare ga
+    $(tag:odd)=> tag ki odd value ko target kare ga
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <script src="JS/jquery.js"></script>
+    <style>
+        #test{
+            border:  2px solid black;
+            width: 300px;
+            height: 150px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="test">
+        <h1>this is by id</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, sequi!</p>
+    </div>
+
+    <ul id="list">
+        <li>Orange</li>
+        <li class="innerlist">Banana</li>
+        <li>Grapes</li>
+        <li class="innerlist">Apple</li>
+        <li>Guava</li>
+    </ul>
+    <script>
+        $(document).ready(function(){
+            // $("selector_name").css("propertyName", "value");
+            // $("#test").css("backgrund-color", "red");
+            // $("#list").css("border" , "2px solid blue");
+            // $("#list li").css("border" , "2px solid red");
+            // $("li:first").css("border" , "2px solid red");
+            // $("li:last").css("border" , "2px solid red");
+            // $("ul li").css("border" , "2px solid red");
+            // $("*").css("border" , "2px solid red");
+        });
+    </script>
+    
+</body>
+</html>

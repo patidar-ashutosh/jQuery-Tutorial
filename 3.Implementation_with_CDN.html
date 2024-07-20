@@ -1,0 +1,36 @@
+<!--
+
+CDN => Content Delivery Network
+
+jese ki hari site pe koi visiter aata hai to vo request serve pe jaati or server return me HTML,CSS,IMages Or jQuery return karta hai
+jese se ki hamari site pe ek saath 1000 user aaja te hai to serve habhi ko ye file return kare ga jise server pe thoda sa load pade ga
+is problem ko slove karne ke liye ham CDN ka use karte hai 
+jisme hamari file kis or server pe store hoti hai or ham uska url leke use use kar sakte hai
+jise ki hamare server pe load kam padta hai
+
+
+CDN yani ki jispe koi file store hoti hai or us file ko use karne ke liye ham uski URL ka use kare access kar sakte hai 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- // to ab ho jquery hai vo dusre server pe se aaye ga jise hamare  server pe load kam pade ga  -->
+
+</head>
+<body>
+
+    <script>
+        $(document).ready(function()
+        {
+            alert("done");
+        });
+    </script>
+    
+</body>
+</html>

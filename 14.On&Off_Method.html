@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+
+    <!--
+        On method ka use HTML ke kisi ek Element(tag) pe ek saath Multiple event laga ne ke liye hota hai
+        off Method ka use On Method se jo ham ne multiple event create kiye hoge us se remove karne ke liye hota hai
+        off("event_name1, event_name2");
+    -->
+    <script src="JS/jquery.js"></script>
+    <style>
+        #box{
+            padding: 10px;
+            border: 1px solid black;
+        } 
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Heading</h2>
+        <p>Lorem ipsum dolor sit <span> consectetur adipisicing elit. </span>Laborum odio dolorem, facilis modi rem similique.</p>
+    </div><br><br>
+    <button>Remove Event</button>
+  
+    <script> 
+
+        $(document).ready(function(){
+            $("#box").on({
+                "click" : function(){
+                    $(this).css("background", "orange");
+                },
+                "mouseover" : function(){
+                    $(this).css("background", "pink");
+                },
+                "mouseout" : function(){
+                    $(this).css("background", "lightblue");
+                }
+            });
+
+            $("button").click(function(){
+                $("#box").off("mouseover mouseout");
+            });
+        });
+
+    </script>
+    
+</body>
+</html>
